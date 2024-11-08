@@ -1,5 +1,5 @@
-import { ref, reactive, toRefs } from "vue";
-import { UnleashClient, IConfig, IContext } from "unleash-proxy-client";
+import { ref, reactive, toRefs } from 'vue';
+import { UnleashClient, IConfig, IContext } from 'unleash-proxy-client';
 
 type eventArgs = [Function, any];
 
@@ -29,11 +29,11 @@ function useUnleashProvide({
 		client.value = new UnleashClient(config);
 	}
 
-	client.value?.on("ready", () => {
+	client.value?.on('ready', () => {
 		flagsReady.value = true;
 	});
 
-	client.value?.on("error", (e: any) => {
+	client.value?.on('error', (e: any) => {
 		flagsError.value = e;
 	});
 

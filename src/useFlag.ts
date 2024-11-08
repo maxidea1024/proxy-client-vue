@@ -1,6 +1,6 @@
-import { UnleashClient } from "unleash-proxy-client";
-import { ref, inject, onUnmounted, Ref } from "vue";
-import { ContextStateSymbol } from "./context";
+import { UnleashClient } from 'unleash-proxy-client';
+import { ref, inject, onUnmounted, Ref } from 'vue';
+import { ContextStateSymbol } from './context';
 
 type TFlagContext = Partial<{
 	isEnabled: Ref<(name: string) => boolean | undefined>;
@@ -22,12 +22,12 @@ const useFlag = (name: string) => {
 		flag.value = Boolean(isEnabled?.value(name));
 	}
 
-	client?.value.on("ready", onReady);
-	client?.value.on("update", onUpdate);
+	client?.value.on('ready', onReady);
+	client?.value.on('update', onUpdate);
 
 	onUnmounted(() => {
-		client?.value.off("ready", onReady);
-		client?.value.off("update", onUpdate);
+		client?.value.off('ready', onReady);
+		client?.value.off('update', onUpdate);
 	});
 
 	return flag;

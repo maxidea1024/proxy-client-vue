@@ -1,5 +1,5 @@
-import { inject, Ref } from "vue";
-import { ContextStateSymbol } from "./context";
+import { inject, Ref } from 'vue';
+import { ContextStateSymbol } from './context';
 
 type TFlagStatusContext = Partial<{
 	flagsReady: Ref<boolean>;

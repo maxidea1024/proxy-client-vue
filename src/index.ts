@@ -5,21 +5,21 @@ export type {
 	IVariant,
 	IToggle,
 	IStorageProvider,
-} from "unleash-proxy-client";
+} from 'unleash-proxy-client';
 export {
 	UnleashClient,
 	LocalStorageProvider,
 	InMemoryStorageProvider,
-} from "unleash-proxy-client";
+} from 'unleash-proxy-client';
 
-import { ContextStateSymbol, ContextUpdateSymbol } from "./context";
-import FlagProvider from "./FlagProvider.vue";
-import useFlag from "./useFlag";
-import useFlagsStatus from "./useFlagsStatus";
-import useVariant from "./useVariant";
-import useUnleashContext from "./useUnleashContext";
-import useUnleashClient from "./useUnleashClient";
-import plugin from "./plugin";
+import { ContextStateSymbol, ContextUpdateSymbol } from './context';
+import FlagProvider from './FlagProvider.vue';
+import useFlag from './useFlag';
+import useFlagsStatus from './useFlagsStatus';
+import useVariant from './useVariant';
+import useUnleashContext from './useUnleashContext';
+import useUnleashClient from './useUnleashClient';
+import plugin from './plugin';
 
 export {
 	ContextStateSymbol,
