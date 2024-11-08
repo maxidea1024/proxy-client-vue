@@ -8,7 +8,6 @@ type TUnleashContext = Partial<{
 
 const useUnleashContext = () => {
 	const { updateContext } = inject<TUnleashContext>(ContextStateSymbol, {});
-
 	return updateContext?.value;
 };
 
