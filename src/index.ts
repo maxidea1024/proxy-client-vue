@@ -1,15 +1,15 @@
 export type {
-	IConfig,
-	IContext,
-	IMutableContext,
-	IVariant,
-	IToggle,
-	IStorageProvider,
+  IConfig,
+  IContext,
+  IMutableContext,
+  IVariant,
+  IToggle,
+  IStorageProvider,
 } from 'unleash-proxy-client';
 export {
-	UnleashClient,
-	LocalStorageProvider,
-	InMemoryStorageProvider,
+  UnleashClient,
+  LocalStorageProvider,
+  InMemoryStorageProvider,
 } from 'unleash-proxy-client';
 
 import { ContextStateSymbol, ContextUpdateSymbol } from './context';
@@ -22,15 +22,15 @@ import useUnleashClient from './useUnleashClient';
 import plugin from './plugin';
 
 export {
-	ContextStateSymbol,
-	ContextUpdateSymbol,
-	FlagProvider,
-	useFlag,
-	useFlagsStatus,
-	useVariant,
-	useUnleashContext,
-	useUnleashClient,
-	plugin,
+  ContextStateSymbol,
+  ContextUpdateSymbol,
+  FlagProvider,
+  useFlag,
+  useFlagsStatus,
+  useVariant,
+  useUnleashContext,
+  useUnleashClient,
+  plugin,
 };
 
 export default FlagProvider;

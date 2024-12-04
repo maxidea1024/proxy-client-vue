@@ -1,18 +1,17 @@
-import { inject, Ref } from 'vue';
+import { inject, type Ref } from 'vue';
 import { ContextStateSymbol } from './context';
 
 type TFlagStatusContext = Partial<{
-	flagsReady: Ref<boolean>;
-	flagsError: Ref<boolean>;
+  flagsReady: Ref<boolean>;
+  flagsError: Ref<boolean>;
 }>;
 
 const useFlagsStatus = () => {
-	const { flagsReady, flagsError } = inject<TFlagStatusContext>(
-		ContextStateSymbol,
-		{},
-	);
-
-	return { flagsReady, flagsError };
+  const { flagsReady, flagsError } = inject<TFlagStatusContext>(
+    ContextStateSymbol,
+    {},
+  );
+  return { flagsReady, flagsError };
 };
 
 export default useFlagsStatus;

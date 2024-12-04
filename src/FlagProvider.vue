@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, provide } from 'vue'
-import { UnleashClient, IConfig } from 'unleash-proxy-client'
+import type { UnleashClient, IConfig } from 'unleash-proxy-client'
 
 import { ContextStateSymbol, ContextUpdateSymbol } from './context'
 import useUnleashProvide from './useUnleashProvide'
