@@ -11,6 +11,7 @@ const useFlagsStatus = () => {
     ContextStateSymbol,
     {},
   );
+
   return { flagsReady, flagsError };
 };
 

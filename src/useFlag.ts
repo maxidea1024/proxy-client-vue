@@ -11,23 +11,23 @@ const useFlag = (name: string) => {
   const { isEnabled, client } = inject<TFlagContext>(ContextStateSymbol, {});
   const flag = ref(Boolean(isEnabled?.value(name)));
 
-  function onUpdate() {
+  const readyHandler = () => {
+    flag.value = Boolean(isEnabled?.value(name));
+  }
+
+  const updateHandler = () => {
     const enabled = isEnabled?.value(name);
     if (enabled !== flag.value) {
       flag.value = !!enabled;
     }
   }
 
-  function onReady() {
-    flag.value = Boolean(isEnabled?.value(name));
-  }
-
-  client?.value.on('ready', onReady);
-  client?.value.on('update', onUpdate);
+  client?.value.on('ready', readyHandler);
+  client?.value.on('update', updateHandler);
 
   onUnmounted(() => {
-    client?.value.off('ready', onReady);
-    client?.value.off('update', onUpdate);
+    client?.value.off('ready', readyHandler);
+    client?.value.off('update', updateHandler);
   });
 
   return flag;
